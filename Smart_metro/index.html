@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Metro System</title>
+    <link rel="stylesheet" href="styles1.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Smart Metro System</h1>
+        <p class="subtitle">Plan Your Journey</p>
+      </header>
+
+      <main>
+        <div class="journey-planner">
+          <div class="input-group">
+            <label for="start-station">Starting Station</label>
+            <input
+              type="text"
+              id="start-station"
+              placeholder="Enter starting station"
+            />
+            <div class="suggestions" id="start-suggestions"></div>
+          </div>
+
+          <div class="input-group">
+            <label for="end-station">Destination Station</label>
+            <input
+              type="text"
+              id="end-station"
+              placeholder="Enter destination station"
+            />
+            <div class="suggestions" id="end-suggestions"></div>
+          </div>
+
+          <div class="input-group">
+            <label for="via-station">Via Station (Optional)</label>
+            <input
+              type="text"
+              id="via-station"
+              placeholder="Enter intermediate station (optional)"
+            />
+            <div class="suggestions" id="via-suggestions"></div>
+          </div>
+
+          <button id="plan-journey" class="primary-button">Plan Journey</button>
+        </div>
+
+        <div class="results hidden" id="results">
+          <h2>Journey Details</h2>
+
+          <div class="route-display">
+            <h3>Route</h3>
+            <div id="route-path" class="route-path"></div>
+          </div>
+
+          <div class="journey-details">
+            <div class="detail-card">
+              <h4>Distance</h4>
+              <p id="total-distance">-- km</p>
+            </div>
+            <div class="detail-card">
+              <h4>Stations</h4>
+              <p id="station-count">--</p>
+            </div>
+            <div class="detail-card">
+              <h4>Est. Time</h4>
+              <p id="journey-time">-- min</p>
+            </div>
+          </div>
+
+          <div class="metro-options">
+            <h3>Available Metros</h3>
+            <div id="metro-list" class="metro-list"></div>
+          </div>
+
+          <div class="status-updates">
+            <h3>Live Updates</h3>
+            <div id="status-list" class="status-list"></div>
+          </div>
+        </div>
+      </main>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Planning your journey...</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

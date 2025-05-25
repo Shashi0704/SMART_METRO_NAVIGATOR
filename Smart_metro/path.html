@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shortest Path</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shortest Path</h1>
+      <img src="metro-map.png" alt="Metro Map" class="metro-map" />
+      <div id="pathResult"></div>
+      <p id="startStationInfo"></p>
+      <p id="endStationInfo"></p>
+      <button id="returnHomeButton">Return to Home</button>
+    </div>
+    <script>
+      const pathData = decodeURIComponent(
+        new URLSearchParams(window.location.search).get("path")
+      );
+      const startStation = decodeURIComponent(
+        new URLSearchParams(window.location.search).get("startStation")
+      );
+      const endStation = decodeURIComponent(
+        new URLSearchParams(window.location.search).get("endStation")
+      );
+
+      document.getElementById(
+        "pathResult"
+      ).textContent = `Shortest Path: ${pathData}`;
+      document.getElementById(
+        "startStationInfo"
+      ).textContent = `Start Station: Station ${startStation}`;
+      document.getElementById(
+        "endStationInfo"
+      ).textContent = `End Station: Station ${endStation}`;
+
+      const returnHomeButton = document.getElementById("returnHomeButton");
+      returnHomeButton.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

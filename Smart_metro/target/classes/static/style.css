@@ -1,0 +1,622 @@
+/* Root Variables */
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+    --text-dark: #2c3e50;
+    --text-light: #666;
+    --background-light: #f8f9fa;
+    --white: #fff;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('images/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: var(--spacing-md) auto;
+    padding: var(--spacing-lg);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(10px);
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--gradient);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: var(--spacing-sm) 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lead {
+    font-size: 1.1rem;
+    margin-top: var(--spacing-sm);
+    opacity: 0.9;
+}
+
+/* Metro Map Section */
+.metro-map-container {
+    position: relative;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-sm);
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    max-height: 300px;
+}
+
+.metro-map {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    max-height: 280px;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    object-fit: contain;
+}
+
+.metro-map:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Form Styles */
+.route-form {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-lg) var(--spacing-lg);
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+}
+
+.form-header i {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.station-select {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.station-select::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    pointer-events: none;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #e1e1e1;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    background-color: var(--white);
+    transition: var(--transition);
+    appearance: none;
+    cursor: pointer;
+    height: 55px;
+    color: var(--text-dark);
+}
+
+.form-select:hover {
+    border-color: var(--primary-color);
+    background-color: var(--background-light);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+    background-color: var(--white);
+}
+
+.form-select option {
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: var(--gradient);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-md);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary i {
+    font-size: 1.3rem;
+}
+
+/* Results Section */
+.route-result {
+    margin-top: var(--spacing-lg);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: none;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.list-group-item {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--background-light);
+    transition: var(--transition);
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+    background-color: #f0f7ff;
+}
+
+/* Metro Info Cards */
+.metro-info {
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.metro-info:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.recommended {
+    border-left: 4px solid var(--success-color);
+    background-color: #f0fff4;
+}
+
+.recommended::before {
+    content: '★';
+    color: var(--success-color);
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* Status Updates */
+.status-update {
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+    background-color: #fff8e1;
+    border-left: 4px solid var(--warning-color);
+    border-radius: var(--border-radius);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Error Messages */
+.error-message {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #fee;
+    border-left: 4px solid var(--danger-color);
+    border-radius: var(--border-radius);
+    color: var(--danger-color);
+}
+
+/* Loading Animation */
+.loading {
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    .route-form {
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .lead {
+        font-size: 0.9rem;
+    }
+
+    .metro-map-container {
+        max-height: 250px;
+    }
+
+    .metro-map {
+        max-height: 230px;
+    }
+
+    .form-select {
+        height: 50px;
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .btn-primary {
+        height: 50px;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .header {
+        padding: var(--spacing-md);
+    }
+
+    .card-body {
+        padding: var(--spacing-md);
+    }
+
+    .metro-map-container {
+        max-height: 200px;
+    }
+
+    .metro-map {
+        max-height: 180px;
+    }
+
+    .form-select {
+        height: 45px;
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Route Summary */
+.route-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+}
+
+.summary-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.summary-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.summary-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.summary-item h5 {
+    font-size: 0.9rem;
+    margin: var(--spacing-sm) 0;
+}
+
+.summary-item p {
+    font-size: 1.2rem;
+}
+
+/* Station List */
+.station-list {
+    margin: var(--spacing-md) 0;
+}
+
+.station-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.station-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.station-number {
+    width: 25px;
+    height: 25px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.station-name {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+/* Metro Details */
+.metro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.metro-header h6 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.recommended-badge {
+    background: var(--success-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.metro-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.detail-item i {
+    color: var(--primary-color);
+}
+
+/* Map Overlay */
+.map-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--primary-color);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.map-overlay i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.metro-map-container:hover .map-overlay {
+    opacity: 1;
+}
+
+.metro-map-container:hover .metro-map {
+    filter: brightness(0.8);
+}
+
+/* Section Titles */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section-title i {
+    font-size: 1.2rem;
+}
+
+/* Status Updates */
+.status-update {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-update i {
+    color: var(--warning-color);
+    font-size: 1.2rem;
+}
+
+/* Loading Spinner */
+.loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(var(--primary-color), 0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading p {
+    margin-top: 1rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+} 
